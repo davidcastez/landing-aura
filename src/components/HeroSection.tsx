@@ -105,7 +105,7 @@ const HeroSection = () => {
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.6, ease: [0.25, 0.1, 0.25, 1] }}
-        className="relative max-w-4xl lg:max-w-[1150px] xl:max-w-none font-display text-[clamp(1.5rem,7.2vw,1.75rem)] [@media(max-width:639px)_and_(max-height:700px)]:text-[1.375rem] sm:text-4xl md:text-[2.5rem] lg:text-[2.75rem] xl:text-[clamp(3.25rem,4vw,5rem)] font-extrabold uppercase tracking-[-0.01em] sm:tracking-[0.02em] leading-[1.08] sm:leading-[1.15] text-balance mt-20 [@media(max-width:639px)_and_(max-height:730px)]:mt-16 sm:mt-16 mb-3 sm:mb-8 text-foreground"
+        className="relative max-w-4xl lg:max-w-[1150px] xl:max-w-none font-display text-[clamp(1.5rem,7.2vw,1.75rem)] [@media(max-width:639px)_and_(max-height:760px)_and_(min-height:641px)]:text-[clamp(1.3125rem,5.6vw,1.375rem)] [@media(max-width:639px)_and_(max-height:640px)]:text-[1.3125rem] sm:text-4xl md:text-[2.5rem] lg:text-[2.75rem] xl:text-[clamp(3.25rem,4vw,5rem)] font-extrabold uppercase tracking-[-0.01em] sm:tracking-[0.02em] leading-[1.08] sm:leading-[1.15] text-balance mt-20 [@media(max-width:639px)_and_(max-height:760px)_and_(min-height:641px)]:mt-[5.5rem] [@media(max-width:639px)_and_(max-height:640px)]:mt-[4.5rem] sm:mt-16 mb-3 sm:mb-8 text-foreground"
       >
         Ayudamos corredores y agencias inmobiliarias, a cerrar{" "}
         <span className="text-primary underline decoration-[0.07em] underline-offset-[0.18em] sm:no-underline">
@@ -119,7 +119,7 @@ const HeroSection = () => {
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         transition={{ delay: 0.2, duration: 0.6 }}
-        className="relative max-w-2xl md:max-w-[880px] lg:max-w-[1050px] xl:max-w-[1150px] text-base [@media(max-width:639px)_and_(max-height:700px)]:text-[0.9375rem] sm:text-lg xl:text-xl text-muted-foreground leading-snug sm:leading-relaxed mb-11 [@media(max-width:639px)_and_(max-height:730px)]:mb-6 sm:mb-12"
+        className="relative max-w-2xl md:max-w-[880px] lg:max-w-[1050px] xl:max-w-[1150px] text-base [@media(max-width:639px)_and_(max-height:760px)_and_(min-height:641px)]:text-[0.9375rem] [@media(max-width:639px)_and_(max-height:640px)]:text-[0.9375rem] sm:text-lg xl:text-xl text-muted-foreground leading-[1.32] sm:leading-relaxed mb-11 [@media(max-width:639px)_and_(max-height:760px)_and_(min-height:641px)]:mb-14 [@media(max-width:639px)_and_(max-height:640px)]:mb-10 sm:mb-12"
       >
         <span className="sm:hidden">
           Descubre este nuevo metodo que permite{" "}
@@ -136,12 +136,12 @@ const HeroSection = () => {
       <motion.div
         animate={{ y: [0, 10, 0] }}
         transition={{ repeat: Infinity, duration: 2 }}
-        className="flex flex-col items-center gap-1 sm:gap-2 text-primary"
+        className="flex flex-col items-center gap-0.5 sm:gap-2 text-primary"
       >
         <span className="font-display text-[clamp(0.78125rem,3.85vw,1rem)] sm:text-xl md:text-2xl font-black tracking-[0.02em] sm:tracking-widest uppercase whitespace-nowrap">
           Descubre como funciona el Metodo AURA
         </span>
-        <ChevronDown className="w-6 h-6 sm:w-8 sm:h-8" strokeWidth={2.5} />
+        <ChevronDown className="w-5 h-5 sm:w-8 sm:h-8" strokeWidth={2.5} />
       </motion.div>
 
       {/* YouTube Video Embed - No seeking allowed */}
@@ -149,11 +149,11 @@ const HeroSection = () => {
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ delay: 0.4, duration: 0.6 }}
-        className="relative w-[calc(100%+2rem)] -mx-4 max-w-none sm:w-full sm:mx-auto sm:max-w-[800px] mt-5 [@media(max-width:639px)_and_(max-height:730px)]:mt-3 sm:mt-12"
+        className="relative w-[88%] mx-auto max-w-none sm:w-full sm:max-w-[800px] mt-9 [@media(max-width:639px)_and_(max-height:760px)_and_(min-height:641px)]:mt-9 [@media(max-width:639px)_and_(max-height:640px)]:mt-6 sm:mt-12"
       >
         <div
           id="lead-video"
-          className="relative aspect-video w-full rounded-none sm:rounded-3xl overflow-hidden shadow-[0_20px_60px_-5px_rgba(111,0,255,0.3)]"
+          className="relative aspect-video w-full rounded-2xl sm:rounded-3xl overflow-hidden shadow-[0_20px_60px_-5px_rgba(111,0,255,0.3)]"
         >
           <iframe
             id="yt-player-etapa2"
