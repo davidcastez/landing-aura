@@ -105,20 +105,22 @@ const HeroSection = () => {
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.6, ease: [0.25, 0.1, 0.25, 1] }}
-        className="relative max-w-3xl font-display text-2xl sm:text-3xl md:text-5xl font-extrabold uppercase tracking-[0.02em] leading-[1.15] text-balance mt-14 sm:mt-16 mb-6 sm:mb-8 text-foreground"
+        className="relative max-w-4xl lg:max-w-[1150px] xl:max-w-[1250px] 2xl:max-w-[1400px] font-display text-[2.25rem] sm:text-4xl md:text-[2.5rem] xl:text-[3.25rem] 2xl:text-6xl font-extrabold uppercase tracking-[-0.01em] sm:tracking-[0.02em] leading-[1.08] sm:leading-[1.15] text-balance mt-14 sm:mt-16 mb-6 sm:mb-8 text-foreground"
       >
-        Escala tu negocio captando{" "}
-        <span className="text-primary">leads más calificados</span>{" "}
-        que paguen más y sin importar la plataforma que uses
+        Ayudamos corredores y agencias inmobiliarias, a cerrar{" "}
+        <span className="text-primary">de 5 a 8 ventas</span>{" "}
+        mensuales en menos de 90 dias.
       </motion.h1>
 
       <motion.p
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         transition={{ delay: 0.2, duration: 0.6 }}
-        className="relative max-w-2xl text-sm sm:text-lg md:text-xl text-muted-foreground leading-relaxed mb-8 sm:mb-12"
+        className="relative max-w-2xl md:max-w-[880px] lg:max-w-[1050px] xl:max-w-[1150px] text-[1.0625rem] sm:text-lg xl:text-xl text-muted-foreground leading-relaxed mb-8 sm:mb-12"
       >
-        Aprende a usar este nuevo metodo que te permitira vender usando cualquier plataforma y deseches las estrategias antiguas que te estan trayendo leads poco calificados
+        Instala este nuevo sistema en tu negocio inmobiliario que te permite{" "}
+        <em className="font-bold italic underline">captar y vender</em>{" "}
+        propiedades mas eficientemente, sin puerta fria, sin tener que caminar por horas, sin llamadas en frio. Todo desde tu casa u oficina
       </motion.p>
 
       <motion.div
@@ -126,8 +128,8 @@ const HeroSection = () => {
         transition={{ repeat: Infinity, duration: 2 }}
         className="flex flex-col items-center gap-2 text-primary"
       >
-        <span className="font-display text-xs sm:text-sm font-semibold tracking-widest uppercase">
-          Descubre por que
+        <span className="font-display text-xs sm:text-sm font-black tracking-widest uppercase">
+          Descubre como funciona el Metodo AURA
         </span>
         <ChevronDown className="w-5 h-5 sm:w-6 sm:h-6" />
       </motion.div>
@@ -137,11 +139,11 @@ const HeroSection = () => {
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ delay: 0.4, duration: 0.6 }}
-        className="relative w-full max-w-[800px] mt-8 sm:mt-12"
+        className="relative w-[calc(100%+2rem)] -mx-4 max-w-none sm:w-full sm:mx-auto sm:max-w-[800px] mt-6 sm:mt-12"
       >
         <div
           id="lead-video"
-          className="relative aspect-video w-full rounded-2xl sm:rounded-3xl overflow-hidden shadow-[0_20px_60px_-5px_rgba(111,0,255,0.3)]"
+          className="relative aspect-video w-full rounded-none sm:rounded-3xl overflow-hidden shadow-[0_20px_60px_-5px_rgba(111,0,255,0.3)]"
         >
           <iframe
             id="yt-player-etapa2"
