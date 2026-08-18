@@ -97,7 +97,7 @@ const HeroSection = () => {
         <img
           src="/aura-logo.png"
           alt="AURA"
-          className="w-9 h-9 sm:w-14 sm:h-14"
+          className="w-8 h-8 sm:w-14 sm:h-14"
         />
       </header>
 
@@ -105,22 +105,32 @@ const HeroSection = () => {
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.6, ease: [0.25, 0.1, 0.25, 1] }}
-        className="relative max-w-4xl lg:max-w-[1150px] xl:max-w-none font-display text-[clamp(1.5rem,7.2vw,1.75rem)] [@media(max-width:639px)_and_(max-height:700px)]:text-[1.375rem] sm:text-4xl md:text-[2.5rem] lg:text-[2.75rem] xl:text-[clamp(3.25rem,4vw,5rem)] font-extrabold uppercase tracking-[-0.01em] sm:tracking-[0.02em] leading-[1.08] sm:leading-[1.15] text-balance mt-10 sm:mt-16 mb-3 sm:mb-8 text-foreground"
+        className="relative max-w-4xl lg:max-w-[1150px] xl:max-w-none font-display text-[clamp(1.5rem,7.2vw,1.75rem)] [@media(max-width:639px)_and_(max-height:700px)]:text-[1.375rem] sm:text-4xl md:text-[2.5rem] lg:text-[2.75rem] xl:text-[clamp(3.25rem,4vw,5rem)] font-extrabold uppercase tracking-[-0.01em] sm:tracking-[0.02em] leading-[1.08] sm:leading-[1.15] text-balance mt-20 [@media(max-width:639px)_and_(max-height:730px)]:mt-16 sm:mt-16 mb-3 sm:mb-8 text-foreground"
       >
         Ayudamos corredores y agencias inmobiliarias, a cerrar{" "}
-        <span className="text-primary whitespace-nowrap">de 5 a 8 ventas</span>{" "}
-        mensuales en menos de 90 dias.
+        <span className="text-primary underline decoration-[0.07em] underline-offset-[0.18em] sm:no-underline">
+          <span className="whitespace-nowrap">de 5 a 8 ventas</span>{" "}
+          <span className="sm:text-foreground">mensuales</span>
+        </span>{" "}
+        en menos de 90 dias.
       </motion.h1>
 
       <motion.p
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         transition={{ delay: 0.2, duration: 0.6 }}
-        className="relative max-w-2xl md:max-w-[880px] lg:max-w-[1050px] xl:max-w-[1150px] text-base [@media(max-width:639px)_and_(max-height:700px)]:text-[0.9375rem] sm:text-lg xl:text-xl text-muted-foreground leading-snug sm:leading-relaxed mb-3 sm:mb-12"
+        className="relative max-w-2xl md:max-w-[880px] lg:max-w-[1050px] xl:max-w-[1150px] text-base [@media(max-width:639px)_and_(max-height:700px)]:text-[0.9375rem] sm:text-lg xl:text-xl text-muted-foreground leading-snug sm:leading-relaxed mb-11 [@media(max-width:639px)_and_(max-height:730px)]:mb-6 sm:mb-12"
       >
-        Instala este nuevo sistema en tu negocio inmobiliario con el que te ayudaremos a{" "}
-        <em className="font-bold italic underline text-black">captar y vender</em>{" "}
-        propiedades sin malgastar tu tiempo, sin puerta fria, sin tener que caminar por horas y sin llamadas en frio, todo desde la comodidad tu casa u oficina
+        <span className="sm:hidden">
+          Descubre este nuevo metodo que permite{" "}
+          <em className="font-bold italic underline text-black">captar y vender</em>{" "}
+          inmuebeles sin desperdiciar tu tiempo, todo desde la comodidad de tu casa u oficina
+        </span>
+        <span className="hidden sm:inline">
+          Instala este nuevo sistema en tu negocio inmobiliario con el que te ayudaremos a{" "}
+          <em className="font-bold italic underline text-black">captar y vender</em>{" "}
+          propiedades sin malgastar tu tiempo, sin puerta fria, sin tener que caminar por horas y sin llamadas en frio, todo desde la comodidad tu casa u oficina
+        </span>
       </motion.p>
 
       <motion.div
@@ -139,7 +149,7 @@ const HeroSection = () => {
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ delay: 0.4, duration: 0.6 }}
-        className="relative w-[calc(100%+2rem)] -mx-4 max-w-none sm:w-full sm:mx-auto sm:max-w-[800px] mt-3 sm:mt-12"
+        className="relative w-[calc(100%+2rem)] -mx-4 max-w-none sm:w-full sm:mx-auto sm:max-w-[800px] mt-5 [@media(max-width:639px)_and_(max-height:730px)]:mt-3 sm:mt-12"
       >
         <div
           id="lead-video"
