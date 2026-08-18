@@ -105,7 +105,7 @@ const HeroSection = () => {
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.6, ease: [0.25, 0.1, 0.25, 1] }}
-        className="relative max-w-4xl lg:max-w-[1150px] xl:max-w-[1250px] 2xl:max-w-[1400px] font-display text-[2.25rem] sm:text-4xl md:text-[2.5rem] xl:text-[3.25rem] 2xl:text-6xl font-extrabold uppercase tracking-[-0.01em] sm:tracking-[0.02em] leading-[1.08] sm:leading-[1.15] text-balance mt-14 sm:mt-16 mb-6 sm:mb-8 text-foreground"
+        className="relative max-w-4xl lg:max-w-[1150px] xl:max-w-[1250px] 2xl:max-w-[1400px] font-display text-[clamp(1.1875rem,5.55vw,1.375rem)] sm:text-4xl md:text-[2.5rem] xl:text-[3.25rem] 2xl:text-6xl font-extrabold uppercase tracking-[-0.01em] sm:tracking-[0.02em] leading-[1.08] sm:leading-[1.15] text-balance mt-14 sm:mt-16 mb-6 sm:mb-8 text-foreground"
       >
         Ayudamos corredores y agencias inmobiliarias, a cerrar{" "}
         <span className="text-primary">de 5 a 8 ventas</span>{" "}
