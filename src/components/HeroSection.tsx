@@ -118,9 +118,9 @@ const HeroSection = () => {
         transition={{ delay: 0.2, duration: 0.6 }}
         className="relative max-w-2xl md:max-w-[880px] lg:max-w-[1050px] xl:max-w-[1150px] text-[1.0625rem] sm:text-lg xl:text-xl text-muted-foreground leading-relaxed mb-8 sm:mb-12"
       >
-        Instala este nuevo sistema en tu negocio inmobiliario que te permite{" "}
-        <em className="font-bold italic underline">captar y vender</em>{" "}
-        propiedades mas eficientemente, sin puerta fria, sin tener que caminar por horas, sin llamadas en frio. Todo desde tu casa u oficina
+        Instala este nuevo sistema en tu negocio inmobiliario con el que te ayudaremos a{" "}
+        <em className="font-bold italic underline text-black">captar y vender</em>{" "}
+        propiedades sin malgastar tu tiempo, sin puerta fria, sin tener que caminar por horas y sin llamadas en frio, todo desde la comodidad tu casa u oficina
       </motion.p>
 
       <motion.div
