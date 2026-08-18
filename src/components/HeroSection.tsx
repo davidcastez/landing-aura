@@ -128,10 +128,10 @@ const HeroSection = () => {
         transition={{ repeat: Infinity, duration: 2 }}
         className="flex flex-col items-center gap-2 text-primary"
       >
-        <span className="font-display text-xs sm:text-sm font-black tracking-widest uppercase">
+        <span className="font-display text-base sm:text-xl md:text-2xl font-black tracking-widest uppercase">
           Descubre como funciona el Metodo AURA
         </span>
-        <ChevronDown className="w-5 h-5 sm:w-6 sm:h-6" />
+        <ChevronDown className="w-7 h-7 sm:w-8 sm:h-8" strokeWidth={2.5} />
       </motion.div>
 
       {/* YouTube Video Embed - No seeking allowed */}
