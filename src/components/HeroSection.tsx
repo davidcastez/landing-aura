@@ -91,13 +91,13 @@ const HeroSection = () => {
   };
 
   return (
-    <section className="relative min-h-[100svh] flex flex-col items-center justify-center px-4 sm:px-6 py-16 sm:py-24 text-center overflow-hidden">
+    <section className="relative min-h-[100svh] flex flex-col items-center justify-start sm:justify-center px-4 sm:px-6 pt-2 pb-8 sm:py-24 text-center overflow-hidden">
       {/* Header with centered logo */}
-      <header className="absolute top-0 left-0 right-0 z-10 flex items-center justify-center py-5 sm:py-6">
+      <header className="absolute top-0 left-0 right-0 z-10 flex items-center justify-center py-2.5 sm:py-6">
         <img
           src="/aura-logo.png"
           alt="AURA"
-          className="w-10 h-10 sm:w-14 sm:h-14"
+          className="w-9 h-9 sm:w-14 sm:h-14"
         />
       </header>
 
@@ -105,7 +105,7 @@ const HeroSection = () => {
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.6, ease: [0.25, 0.1, 0.25, 1] }}
-        className="relative max-w-4xl lg:max-w-[1150px] xl:max-w-[1250px] 2xl:max-w-[1400px] font-display text-[clamp(1.5rem,7.2vw,1.75rem)] sm:text-4xl md:text-[2.5rem] xl:text-[3.25rem] 2xl:text-6xl font-extrabold uppercase tracking-[-0.01em] sm:tracking-[0.02em] leading-[1.08] sm:leading-[1.15] text-balance mt-14 sm:mt-16 mb-6 sm:mb-8 text-foreground"
+        className="relative max-w-4xl lg:max-w-[1150px] xl:max-w-[1250px] 2xl:max-w-[1400px] font-display text-[clamp(1.5rem,7.2vw,1.75rem)] [@media(max-height:700px)]:text-[1.375rem] sm:text-4xl md:text-[2.5rem] xl:text-[3.25rem] 2xl:text-6xl font-extrabold uppercase tracking-[-0.01em] sm:tracking-[0.02em] leading-[1.08] sm:leading-[1.15] text-balance mt-10 sm:mt-16 mb-3 sm:mb-8 text-foreground"
       >
         Ayudamos corredores y agencias inmobiliarias, a cerrar{" "}
         <span className="text-primary whitespace-nowrap">de 5 a 8 ventas</span>{" "}
@@ -116,7 +116,7 @@ const HeroSection = () => {
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         transition={{ delay: 0.2, duration: 0.6 }}
-        className="relative max-w-2xl md:max-w-[880px] lg:max-w-[1050px] xl:max-w-[1150px] text-[1.0625rem] sm:text-lg xl:text-xl text-muted-foreground leading-relaxed mb-8 sm:mb-12"
+        className="relative max-w-2xl md:max-w-[880px] lg:max-w-[1050px] xl:max-w-[1150px] text-base [@media(max-height:700px)]:text-[0.9375rem] sm:text-lg xl:text-xl text-muted-foreground leading-snug sm:leading-relaxed mb-3 sm:mb-12"
       >
         Instala este nuevo sistema en tu negocio inmobiliario con el que te ayudaremos a{" "}
         <em className="font-bold italic underline text-black">captar y vender</em>{" "}
@@ -126,12 +126,12 @@ const HeroSection = () => {
       <motion.div
         animate={{ y: [0, 10, 0] }}
         transition={{ repeat: Infinity, duration: 2 }}
-        className="flex flex-col items-center gap-2 text-primary"
+        className="flex flex-col items-center gap-1 sm:gap-2 text-primary"
       >
-        <span className="font-display text-base sm:text-xl md:text-2xl font-black tracking-widest uppercase">
+        <span className="font-display text-[clamp(0.78125rem,3.85vw,1rem)] sm:text-xl md:text-2xl font-black tracking-[0.02em] sm:tracking-widest uppercase whitespace-nowrap">
           Descubre como funciona el Metodo AURA
         </span>
-        <ChevronDown className="w-7 h-7 sm:w-8 sm:h-8" strokeWidth={2.5} />
+        <ChevronDown className="w-6 h-6 sm:w-8 sm:h-8" strokeWidth={2.5} />
       </motion.div>
 
       {/* YouTube Video Embed - No seeking allowed */}
@@ -139,7 +139,7 @@ const HeroSection = () => {
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ delay: 0.4, duration: 0.6 }}
-        className="relative w-[calc(100%+2rem)] -mx-4 max-w-none sm:w-full sm:mx-auto sm:max-w-[800px] mt-6 sm:mt-12"
+        className="relative w-[calc(100%+2rem)] -mx-4 max-w-none sm:w-full sm:mx-auto sm:max-w-[800px] mt-3 sm:mt-12"
       >
         <div
           id="lead-video"
