@@ -1,94 +1,16 @@
-import { useState, useEffect, useRef } from "react";
-import { motion, AnimatePresence } from "framer-motion";
+import { useEffect } from "react";
+import { motion } from "framer-motion";
 import { ChevronDown } from "lucide-react";
 
-const FORM_DELAY_SECONDS = 60;
-
 const HeroSection = () => {
-  const [showForm, setShowForm] = useState(false);
-  const [isPlaying, setIsPlaying] = useState(false);
-  const formRef = useRef<HTMLDivElement>(null);
-  const playerRef = useRef<any>(null);
-  const allowedTimeRef = useRef(0);
-  const checkIntervalRef = useRef<ReturnType<typeof setInterval> | null>(null);
-
-  // Form delay timer
+  // Load GHL embed script for the booking widget
   useEffect(() => {
-    const timer = setTimeout(() => {
-      setShowForm(true);
-      setTimeout(() => {
-        formRef.current?.scrollIntoView({ behavior: "smooth", block: "center" });
-      }, 100);
-    }, FORM_DELAY_SECONDS * 1000);
-    return () => clearTimeout(timer);
-  }, []);
-
-  // Load GHL form embed script
-  useEffect(() => {
-    if (!showForm) return;
     if (document.querySelector('script[src="https://link.msgsndr.com/js/form_embed.js"]')) return;
     const script = document.createElement("script");
     script.src = "https://link.msgsndr.com/js/form_embed.js";
+    script.type = "text/javascript";
     document.body.appendChild(script);
-  }, [showForm]);
-
-  // YouTube IFrame API - prevent seeking forward
-  useEffect(() => {
-    if (!(window as any).YT) {
-      const tag = document.createElement("script");
-      tag.src = "https://www.youtube.com/iframe_api";
-      document.head.appendChild(tag);
-    }
-
-    const initPlayer = () => {
-      playerRef.current = new (window as any).YT.Player("yt-player-etapa2", {
-        events: {
-          onStateChange: (event: any) => {
-            if (event.data === 1) {
-              // Playing
-              setIsPlaying(true);
-              if (checkIntervalRef.current) clearInterval(checkIntervalRef.current);
-              checkIntervalRef.current = setInterval(() => {
-                if (!playerRef.current?.getCurrentTime) return;
-                const current = playerRef.current.getCurrentTime();
-                if (current <= allowedTimeRef.current + 2) {
-                  allowedTimeRef.current = Math.max(allowedTimeRef.current, current);
-                } else {
-                  playerRef.current.seekTo(allowedTimeRef.current, true);
-                }
-              }, 500);
-            } else {
-              setIsPlaying(false);
-              if (checkIntervalRef.current) {
-                clearInterval(checkIntervalRef.current);
-                checkIntervalRef.current = null;
-              }
-            }
-          },
-        },
-      });
-    };
-
-    if ((window as any).YT?.Player) {
-      initPlayer();
-    } else {
-      (window as any).onYouTubeIframeAPIReady = initPlayer;
-    }
-
-    return () => {
-      if (checkIntervalRef.current) clearInterval(checkIntervalRef.current);
-    };
   }, []);
-
-  // Toggle play/pause via API
-  const handleVideoClick = () => {
-    if (!playerRef.current) return;
-    if (isPlaying) {
-      playerRef.current.pauseVideo();
-    } else {
-      playerRef.current.playVideo();
-    }
-  };
 
   return (
     <section className="relative min-h-[100svh] flex flex-col items-center justify-start sm:justify-center px-4 sm:px-6 pt-2 pb-8 sm:py-24 text-center overflow-hidden">
@@ -139,59 +61,27 @@ const HeroSection = () => {
         className="flex flex-col items-center gap-0.5 sm:gap-2 text-primary"
       >
         <span className="font-display text-[clamp(0.78125rem,3.85vw,1rem)] sm:text-xl md:text-2xl font-black tracking-[0.02em] sm:tracking-widest uppercase whitespace-nowrap">
-          Descubre como funciona el Metodo AURA
+          Agenda tu sesion ahora
         </span>
         <ChevronDown className="w-5 h-5 sm:w-8 sm:h-8" strokeWidth={2.5} />
       </motion.div>
 
-      {/* YouTube Video Embed - No seeking allowed */}
+      {/* GHL Booking Widget */}
       <motion.div
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ delay: 0.4, duration: 0.6 }}
-        className="relative w-[88%] mx-auto max-w-none sm:w-full sm:max-w-[800px] mt-9 [@media(max-width:639px)_and_(max-height:760px)_and_(min-height:641px)]:mt-9 [@media(max-width:639px)_and_(max-height:640px)]:mt-6 sm:mt-12"
+        className="relative w-full mx-auto max-w-[900px] mt-9 [@media(max-width:639px)_and_(max-height:640px)]:mt-6 sm:mt-12"
       >
-        <div
-          id="lead-video"
-          className="relative aspect-video w-full rounded-2xl sm:rounded-3xl overflow-hidden shadow-[0_20px_60px_-5px_rgba(111,0,255,0.3)]"
-        >
-          <iframe
-            id="yt-player-etapa2"
-            src="https://www.youtube.com/embed/OWorFLIbRoo?enablejsapi=1&rel=0&modestbranding=1&disablekb=1&fs=0"
-            title="Video"
-            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-            className="absolute inset-0 w-full h-full"
-          />
-          {/* Transparent overlay - blocks seek bar clicks, allows play/pause via our handler */}
-          <div
-            onClick={handleVideoClick}
-            className="absolute inset-0 z-10 cursor-pointer"
-            style={{ background: "transparent" }}
-          />
-        </div>
+        <iframe
+          src="https://api.leadconnectorhq.com/widget/booking/yYwUIiNvFLV67DvNfWSf"
+          allow="payment"
+          style={{ width: "100%", border: "none", overflow: "hidden", minHeight: "700px" }}
+          scrolling="no"
+          id="yYwUIiNvFLV67DvNfWSf_1787951414184"
+          title="Agenda tu sesion"
+        />
       </motion.div>
-
-      {/* GHL Survey with 60s delay */}
-      <div ref={formRef} className="relative z-20 w-full max-w-[800px] mt-8 sm:mt-12">
-        <AnimatePresence>
-          {showForm && (
-            <motion.div
-              initial={{ opacity: 0, y: 40, height: 0 }}
-              animate={{ opacity: 1, y: 0, height: "auto" }}
-              transition={{ duration: 0.8, ease: [0.25, 0.1, 0.25, 1] }}
-              className="overflow-hidden"
-            >
-              <iframe
-                src="https://api.leadconnectorhq.com/widget/survey/ONISXPtG8sQ4jDL2wWJ4"
-                style={{ border: "none", width: "100%", minHeight: "600px", position: "relative", zIndex: 30 }}
-                scrolling="no"
-                id="ONISXPtG8sQ4jDL2wWJ4"
-                title="survey"
-              />
-            </motion.div>
-          )}
-        </AnimatePresence>
-      </div>
     </section>
   );
 };
