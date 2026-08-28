@@ -29,7 +29,7 @@ const HeroSection = () => {
         transition={{ duration: 0.6, ease: [0.25, 0.1, 0.25, 1] }}
         className="relative max-w-4xl lg:max-w-[1150px] xl:max-w-none font-display text-[clamp(1.5rem,7.2vw,1.75rem)] [@media(max-width:639px)_and_(max-height:760px)_and_(min-height:641px)]:text-[clamp(1.3125rem,5.6vw,1.375rem)] [@media(max-width:639px)_and_(max-height:640px)]:text-[1.3125rem] sm:text-4xl md:text-[2.5rem] lg:text-[2.75rem] xl:text-[clamp(3.25rem,4vw,5rem)] font-extrabold uppercase tracking-[-0.01em] sm:tracking-[0.02em] leading-[1.08] sm:leading-[1.15] text-balance mt-20 [@media(max-width:639px)_and_(max-height:760px)_and_(min-height:641px)]:mt-[5.5rem] [@media(max-width:639px)_and_(max-height:640px)]:mt-[4.5rem] sm:mt-16 mb-3 sm:mb-8 text-foreground"
       >
-        Ayudamos corredores y agencias inmobiliarias, a cerrar{" "}
+        Ayudamos asesores y agencias inmobiliarias, a cerrar{" "}
         <span className="text-primary underline decoration-[0.07em] underline-offset-[0.18em] sm:no-underline">
           <span className="whitespace-nowrap">de 5 a 8 ventas</span>{" "}
           <span className="sm:text-foreground">mensuales</span>
