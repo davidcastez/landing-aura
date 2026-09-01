@@ -74,7 +74,7 @@ const HeroSection = () => {
         className="relative w-full mx-auto max-w-[900px] mt-9 [@media(max-width:639px)_and_(max-height:640px)]:mt-6 sm:mt-12"
       >
         <iframe
-          src="https://api.leadconnectorhq.com/widget/booking/yYwUIiNvFLV67DvNfWSf"
+          src="/widget/booking/yYwUIiNvFLV67DvNfWSf"
           allow="payment"
           style={{ width: "100%", border: "none", overflow: "hidden", minHeight: "700px" }}
           scrolling="no"
