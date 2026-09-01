@@ -1,0 +1,8 @@
+{
+  "rewrites": [
+    {
+      "source": "/widget/:path*",
+      "destination": "https://api.leadconnectorhq.com/widget/:path*"
+    }
+  ]
+}
